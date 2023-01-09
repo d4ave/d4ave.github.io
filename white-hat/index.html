@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>White Hat Pentesting Services</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var currentlyDisplayed = null;
+      document.getElementById("overview-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "overview") {
+          document.getElementById("overview").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("overview").style.display = "block";
+          document.getElementById("services").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "overview";
+        }
+      });
+      document.getElementById("services-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "services") {
+          document.getElementById("services").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("services").style.display = "block";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "services";
+        }
+      });
+      document.getElementById("about-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "about") {
+          document.getElementById("about").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("services").style.display = "none";
+          document.getElementById("about").style.display = "block";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "about";
+        }
+      });
+      document.getElementById("contact-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "contact") {
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("overview").style.display = "none"
+          document.getElementById("services").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "block";
+          currentlyDisplayed = "contact";
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>White Hat Pentesting Services</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#overview" id="overview-link">Overview</a></li>
+      <li><a href="#services" id="services-link">Services</a></li>
+      <li><a href="#about" id="about-link">About Us</a></li>
+      <li><a href="#contact" id="contact-link">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="overview" style="display: none;">
+      <h2>Overview</h2>
+      <p>Welcome to our website! We offer professional white hat pentesting services to help businesses secure their systems and protect against cyber threats. Our team of certified pentesters has years of experience in identifying vulnerabilities and providing recommendations for remediation.</p>
+    </section>
+    <section id="services" style="display: none;">
+      <h2>Services</h2>
+      <p>We offer a range of pentesting services, including network and web application testing, wireless testing, and social engineering testing. Our team follows a strict set of ethical guidelines and only performs testing with the prior approval of our clients.</p>
+    </section>
+    <section id="about" style="display: none;">
+      <h2>About Us</h2>
+      <p>Our company was founded in 2020 by a group of experienced pentesters who wanted to use their skills for good. We believe in the importance of cybersecurity and are dedicated to helping businesses protect their systems and data.</p>
+    </section>
+    <section id="contact" style="display: none;">
+      <h2>Contact</h2>
+      <p>If you are interested in our services or have any questions, please don't hesitate to reach out to us. You can contact us by email at info@whitehatpentesting.com or by phone at 555-555-5555.</p>
+    </section>
+  </main>
+  <footer>
+    <hr />
+    <p>Copyright &copy; David Badal</p>
+  </footer>
+</body>
+</html>
