@@ -231,6 +231,14 @@
         document.getElementById("password-strength").style.background = color;
       });
     </script>
+    <script>
+      document.getElementById("save-button").addEventListener("click", function() {
+        event.preventDefault();
+        var input = document.getElementById("text-input").value;
+        localStorage.setItem("storedText", input);
+      });
+      document.get
+    </script>
 <!--//-->
 <!--//-->
   </main>
@@ -238,14 +246,6 @@
 <!--//-->
     <section id="functions" style="display: block;">
       <h2>Hello World, this is still in progress</h2>
-      <script>
-        document.getElementById("save-button").addEventListener("click", function() {
-          event.preventDefault();
-          var input = document.getElementById("text-input").value;
-          localStorage.setItem("storedText", input);
-        });
-        document.get
-      </script>
     </section>
 <!--//-->
   </main>
