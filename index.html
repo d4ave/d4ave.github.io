@@ -66,9 +66,6 @@
     document.getElementById("contact").style.display = "none";
     currentlyDisplayed = "services";
 
-    // Display the uploaded files
-    var fileDisplay = document.getElementById('file-display');
-    fileDisplay.style.display = "block";
   }
 });
   </script>
@@ -125,9 +122,41 @@
       <hr />
       <h2>File upload:</h2>
       <p></p>
-      <div id="file-display"></div>
-      <p></p>
-      <input type="file" id="fi le-input" />
+      <form id="file-form">
+        <input type="file" id="file-input" />
+        <button type="submit">Upload Image</button>
+      </form>
+      
+      <div id="output"></div>
+      
+      <script>
+      const form = document.getElementById("file-form");
+      const fileInput = document.getElementById("file-input");
+      const output = document.getElementById("output");
+      
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const file = fileInput.files[0];
+      
+        if (!file) {
+          output.innerHTML = "No file selected";
+          return;
+        }
+      
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.src = e.target.result;
+          output.innerHTML = "";
+          output.appendChild(img);
+      
+          // You can store the image data in local storage or send it to a server for storage
+          localStorage.setItem("uploaded-image", e.target.result);
+        };
+        reader.readAsDataURL(file);
+      });
+      </script>
+      
       <hr />
     <div id="functions">
       <h2>Password strength indicator:</h2>
@@ -205,6 +234,7 @@
             </script>
           </div>        
           <hr />
+          
         </form>
       </div>
       <script>
