@@ -5,8 +5,6 @@
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  
-
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var currentlyDisplayed = null;
@@ -25,23 +23,23 @@
           currentlyDisplayed = null;
         } else {
           document.getElementById("overview").style.display = "block";
-          document.getElementById("services").style.display = "none";
+          document.getElementById("projects").style.display = "none";
           document.getElementById("about").style.display = "none";
           document.getElementById("contact").style.display = "none";
           currentlyDisplayed = "overview";
         }
       });
-      document.getElementById("services-link").addEventListener("click", function(event) {
+      document.getElementById("projects-link").addEventListener("click", function(event) {
         event.preventDefault();
-        if (currentlyDisplayed === "services") {
-          document.getElementById("services").style.display = "none";
+        if (currentlyDisplayed === "projects") {
+          document.getElementById("projects").style.display = "none";
           currentlyDisplayed = null;
         } else {
           document.getElementById("overview").style.display = "none";
-          document.getElementById("services").style.display = "block";
+          document.getElementById("projects").style.display = "block";
           document.getElementById("about").style.display = "none";
           document.getElementById("contact").style.display = "none";
-          currentlyDisplayed = "services";
+          currentlyDisplayed = "projects";
         }
       });
       document.getElementById("about-link").addEventListener("click", function(event) {
@@ -51,7 +49,7 @@
           currentlyDisplayed = null;
         } else {
           document.getElementById("overview").style.display = "none";
-          document.getElementById("services").style.display = "none";
+          document.getElementById("projects").style.display = "none";
           document.getElementById("about").style.display = "block";
           document.getElementById("contact").style.display = "none";
           currentlyDisplayed = "about";
@@ -64,25 +62,60 @@
           currentlyDisplayed = null;
         } else {
           document.getElementById("overview").style.display = "none"
-          document.getElementById("services").style.display = "none";
+          document.getElementById("projects").style.display = "none";
           document.getElementById("about").style.display = "none";
           document.getElementById("contact").style.display = "block";
           currentlyDisplayed = "contact";
         }
-  });
-});
+      });
+    });
   </script>
 </head>
 <body>
   <header>
-    <h1>D4ave Website / D4ave PORTAFOLIO</h1>
+    <h1>D4ave Website / D4ave Portfolio</h1>
   </header>
+  <language>
+    <!-- Language buttons -->
+    <button class="lang-button" data-lang="en">English</button>
+    <button class="lang-button" data-lang="es">Español</button>
+    
+    <!-- Website content to be translated -->
+
+    
+    <!-- JavaScript code to handle language button clicks -->
+    <script>
+      const langButtons = document.querySelectorAll('.lang-button');
+      const headingEl = document.getElementById('heading');
+      const messageEl = document.getElementById('message');
+    
+      langButtons.forEach((button) => {
+        button.addEventListener('click', async () => {
+          const langCode = button.dataset.lang;
+          const langData = await fetch(`/api/language/${langCode}`).then((res) => res.json());
+    
+          headingEl.innerText = langData.heading;
+          messageEl.innerText = langData.message;
+        });
+      });
+      const languageButtons = document.querySelectorAll(".language-button");
+    
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.getAttribute("data-lang");
+        updateLanguage(lang);
+      });
+    });
+    
+    </script>
+  </language>
+  <p></p>
   <nav>
     <ul>
       <li><a href="#overview" id="overview-link" class="nav-link" >Overview</a></li>
-      <li><a href="#services" id="services-link" class="nav-link" >Services</a></li>
-      <li><a href="#about" id="about-link" class="nav-link" >About Us</a></li>
-      <li><a href="#contact" id="contact-link" class="nav-link" >Contact</a></li>
+      <li><a href="#projects" id="projects-link" class="nav-link" >Projects</a></li>
+      <li><a href="#about" id="about-link" class="nav-link" >About me</a></li>
+      <li><a href="#contact" id="contact-link" class="nav-link" >Contact me</a></li>
     </ul>
   </nav>
   <main>
@@ -90,19 +123,21 @@
       <h2>Overview</h2>
       <p>Welcome to my website! Here is where i'm gonna upload my projects</p>
     </section>
-    <section id="services" style="display: none;">
-      <h2>Services</h2>
-      <p>Here are all my services (null/NaN/empty/""/ /)</p>
+    <section id="projects" style="display: none;">
+      <h2>Projects</h2>
+      <p>Here are all my projects (null/NaN/empty/""/ /)</p>
     </section>
     <section id="about" style="display: none;">
-      <h2>About Us</h2>
+      <h2>About me</h2>
       <p>I'm an IT guy.</p>
     </section>
     <section id="contact" style="display: none;">
-      <h2>Contact</h2>
+      <h2>Contact me</h2>
+      <p>I am David Badal Beltran</p>
       <p>If you are interested in contact me, you can contact by email at random@mail.com or by phone at 555-555-5555.</p>
     </section>
   </main>
+  <p id="message">This is a sample website.</p>
   <footer>
     <hr />
     <p>Copyright &copy; David Badal</p>
