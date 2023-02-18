@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f3f3f3;
   }
+
   
   h1 {
     color: #006699;
@@ -39,7 +40,7 @@ body {
   footer {
     text-align: center;
     margin: 20px;
-    padding: 20px;
+    padding: 5px;
   }
   
   .nav-link.selected {
