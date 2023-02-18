@@ -10,6 +10,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var currentlyDisplayed = null;
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+          link.classList.add('selected');
+        });
+      });
       document.getElementById("overview-link").addEventListener("click", function(event) {
         event.preventDefault();
         if (currentlyDisplayed === "overview") {
@@ -61,20 +69,20 @@
           document.getElementById("contact").style.display = "block";
           currentlyDisplayed = "contact";
         }
-      });
-    });
+  });
+});
   </script>
 </head>
 <body>
   <header>
-    <h1>D4ave Website</h1>
+    <h1>D4ave Website / D4ave PORTAFOLIO</h1>
   </header>
   <nav>
     <ul>
-      <li><a href="#overview" id="overview-link">Overview</a></li>
-      <li><a href="#services" id="services-link">Services</a></li>
-      <li><a href="#about" id="about-link">About Us</a></li>
-      <li><a href="#contact" id="contact-link">Contact</a></li>
+      <li><a href="#overview" id="overview-link" class="nav-link" >Overview</a></li>
+      <li><a href="#services" id="services-link" class="nav-link" >Services</a></li>
+      <li><a href="#about" id="about-link" class="nav-link" >About Us</a></li>
+      <li><a href="#contact" id="contact-link" class="nav-link" >Contact</a></li>
     </ul>
   </nav>
   <main>
