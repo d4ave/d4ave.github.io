@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>D4ave Website</title>
-  <!--<iframe src="http://127.0.0.1:5500/contact" width="400" height="400"></iframe>-->
+  <!---->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <script>
@@ -16,26 +16,74 @@
           link.classList.add('selected');
         });
       });
-      document.getElementById("menu1-link").addEventListener("click", function(event) {
+      document.getElementById("language-link").addEventListener("click", function(event) {
         event.preventDefault();
-        if (currentlyDisplayed === "menu1") {
-          document.getElementById("menu1").style.display = "none";
+        if (currentlyDisplayed === "language") {
+          document.getElementById("language").style.display = "block";
           currentlyDisplayed = null;
         } else {
-          document.getElementById("menu1").style.display = "block";
-          document.getElementById("menu2").style.display = "none";
-          currentlyDisplayed = "menu1";
+          document.getElementById("language").style.display = "block";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "language";
         }
       });
-      document.getElementById("menu2-link").addEventListener("click", function(event) {
+      document.getElementById("overview-link").addEventListener("click", function(event) {
         event.preventDefault();
-        if (currentlyDisplayed === "menu2") {
-          document.getElementById("menu2").style.display = "none";
+        if (currentlyDisplayed === "overview") {
+          document.getElementById("overview").style.display = "none";
           currentlyDisplayed = null;
         } else {
-          document.getElementById("menu1").style.display = "none";
-          document.getElementById("menu2").style.display = "block";
-          currentlyDisplayed = "menu2";
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "block";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "overview";
+        }
+      });
+      document.getElementById("projects-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "projects") {
+          document.getElementById("projects").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "block";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "projects";
+        }
+      });
+      document.getElementById("about-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "about") {
+          document.getElementById("about").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "block";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "about";
+        }
+      });
+      document.getElementById("contact-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "contact") {
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "block";
+          currentlyDisplayed = "contact";
         }
       });
     });
@@ -45,42 +93,36 @@
   <header>
     <h1>D4ave Website / D4ave Portfolio</h1>
   </header>
-  <section id="translate">
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-              {pageLanguage: 'en'},
-              'google_translate_element'
-          );
-      }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <p>
-        You can translate the content of this
-        page by selecting a language in the
-        select box.
-    </p>
-  </section>
   <p></p>
   <nav>
+    <li><a href="#language" id="language-link" class="nav-link">Language</a></li>
     <ul>
-      <li><a href="#menu1" id="menu1-link" class="nav-link" >Menu1</a></li>
-      <li><a href="#menu2" id="menu2-link" class="nav-link" >Menu2</a></li>
-      <li><a href="/overview" id="overview-link" class="nav-link" >Overview</a></li>
-      <li><a href="/projects" id="projects-link" class="nav-link" >Projects</a></li>
-      <li><a href="/about" id="about-link" class="nav-link" >About me</a></li>
-      <li><a href="/contact" id="contact-link" class="nav-link" >Contact me</a></li>
+      <li><a href="#overview" id="overview-link" class="nav-link" >Overview</a></li>
+      <li>|</li>
+      <li><a href="#projects" id="projects-link" class="nav-link" >Projects</a></li>
+      <li>|</li>
+      <li><a href="#about" id="about-link" class="nav-link" >About me</a></li>
+      <li>|</li>
+      <li><a href="#contact" id="contact-link" class="nav-link" >Contact me</a></li>
     </ul>
   </nav>
   <main>
-    <section id="menu1" style="display: none;">
-      <h2>Menu1</h2>
-      <p>Menu 1</p>
-    </section>
-    <section id="menu2" style="display: none;">
-      <h2>Menu2</h2>
-      <p>Menu 2</p>
+    <section id="language" style="display: none;"  >
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <!--<p>
+        You can translate the content of this
+        page by selecting a language in the
+        select box.
+      </p>-->
     </section>
     <section id="overview" style="display: none;">
       <h2>Overview</h2>
@@ -89,6 +131,7 @@
     <section id="projects" style="display: none;">
       <h2>Projects</h2>
       <p>Here are all my projects (null/NaN/empty/""/ /)</p>
+      <a href="projects/index.html">All my projects</a>
     </section>
     <section id="about" style="display: none;">
       <h2>About me</h2>

@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f3f3;
+  margin: 20px;
 }
 
 
@@ -19,6 +20,8 @@ nav ul {
 nav li {
   margin: 0 10px 0px 9px;
   /*border-top: 2px solid red; */
+  display: flex;
+  margin-bottom: 10px;
 }
 
 nav a {
@@ -50,8 +53,8 @@ footer {
 
 }
 
-#translate {
+#language {
   border: 2px solid #ff0000 ;
   background-color: #ffffff;
-  margin-right: 650px;
+  margin-right: 980px;
 }

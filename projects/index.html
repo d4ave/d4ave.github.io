@@ -15,12 +15,25 @@
           link.classList.add('selected');
         });
       });
+      document.getElementById("language-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "language") {
+          document.getElementById("language").style.display = "block";
+          currentlyDisplayed = null;
+        } else {
+          document.getElementById("language").style.display = "block";
+          document.getElementById("menu1").style.display = "none";
+          document.getElementById("menu2").style.display = "none";
+          currentlyDisplayed = "language";
+        }
+      });
       document.getElementById("menu1-link").addEventListener("click", function(event) {
         event.preventDefault();
         if (currentlyDisplayed === "menu1") {
           document.getElementById("menu1").style.display = "none";
           currentlyDisplayed = null;
         } else {
+          document.getElementById("language").style.display = "none";
           document.getElementById("menu1").style.display = "block";
           document.getElementById("menu2").style.display = "none";
           currentlyDisplayed = "menu1";
@@ -32,6 +45,7 @@
           document.getElementById("menu2").style.display = "none";
           currentlyDisplayed = null;
         } else {
+          document.getElementById("language").style.display = "none";
           document.getElementById("menu1").style.display = "none";
           document.getElementById("menu2").style.display = "block";
           currentlyDisplayed = "menu2";
@@ -45,7 +59,16 @@
     <h1>D4ave Website / D4ave Portfolio</h1>
   </header>
   <p></p>
-  <section id="translate">
+  <nav>
+    <li><a href="#language" id="language-link" class="nav-link">Language</a></li>
+    <ul>
+      <li><a href="/" id="home-link" class="nav-link" >Home</a></li>
+      <li>|</li>
+      <li><a href="#menu1" id="menu1-link" class="nav-link" >Menu1</a></li>
+      <li><a href="#menu2" id="menu2-link" class="nav-link" >Menu2</a></li>
+    </ul>
+  </nav>
+  <section id="language" style="display: none;"  >
     <div id="google_translate_element"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -56,23 +79,20 @@
       }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <p>
-        You can translate the content of this
-        page by selecting a language in the
-        select box.
-    </p>
+    <!--<p>
+      You can translate the content of this
+      page by selecting a language in the
+      select box.
+    </p>-->
   </section>
-  <nav>
-    <ul>
-      <li><a href="/" id="home-link" class="nav-link" >Home</a></li>
-      <li><a href="#menu1" id="menu1-link" class="nav-link" >Menu1</a></li>
-      <li><a href="#menu2" id="menu2-link" class="nav-link" >Menu2</a></li>
-      <li><a href="/overview" id="overview-link" class="nav-link" >Overview</a></li>
-      <li><a href="/projects" id="projects-link" class="nav-link" >Projects</a></li>
-      <li><a href="/about" id="about-link" class="nav-link" >About me</a></li>
-      <li><a href="/contact" id="contact-link" class="nav-link" >Contact me</a></li>
-    </ul>
-  </nav>
+  <section id="menu1" style="display: none;">
+    <h2>Menu1</h2>
+    <p>Menu 1</p>
+  </section>
+  <section id="menu2" style="display: none;">
+    <h2>Menu2</h2>
+    <p>Menu 2</p>
+  </section>
   <section id="projects" style="display: block;">
     <h2>Projects</h2>
     <p>Here are going to be all my projects (null/NaN/empty/""/ /)</p>
@@ -82,14 +102,6 @@
     <a href="snake/">Image of the snake game</a>
   </section>
   <main>
-    <section id="menu1" style="display: none;">
-      <h2>Menu1</h2>
-      <p>Menu 1</p>
-    </section>
-    <section id="menu2" style="display: none;">
-      <h2>Menu2</h2>
-      <p>Menu 2</p>
-    </section>
 
   </main>
   <p id="message">This is a sample website.</p>
