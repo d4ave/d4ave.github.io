@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>D4ave Website</title>
-  <!--<iframe src="http://127.0.0.1:5500/contact" width="400" height="400"></iframe>-->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -45,7 +45,8 @@
   <header>
     <h1>D4ave Website / D4ave Portfolio</h1>
   </header>
-  <section id="translate">
+  <p></p>
+    <section id="translate">
     <div id="google_translate_element"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -62,9 +63,9 @@
         select box.
     </p>
   </section>
-  <p></p>
   <nav>
     <ul>
+      <li><a href="/" id="home-link" class="nav-link" >Home</a></li>
       <li><a href="#menu1" id="menu1-link" class="nav-link" >Menu1</a></li>
       <li><a href="#menu2" id="menu2-link" class="nav-link" >Menu2</a></li>
       <li><a href="/overview" id="overview-link" class="nav-link" >Overview</a></li>
@@ -73,6 +74,10 @@
       <li><a href="/contact" id="contact-link" class="nav-link" >Contact me</a></li>
     </ul>
   </nav>
+  <section id="about" style="display: block;">
+    <h2>About me</h2>
+    <p>I'm an IT guy.</p>
+  </section>
   <main>
     <section id="menu1" style="display: none;">
       <h2>Menu1</h2>
@@ -82,23 +87,7 @@
       <h2>Menu2</h2>
       <p>Menu 2</p>
     </section>
-    <section id="overview" style="display: none;">
-      <h2>Overview</h2>
-      <p>Welcome to my website! Here is where i'm gonna upload my projects</p>
-    </section>
-    <section id="projects" style="display: none;">
-      <h2>Projects</h2>
-      <p>Here are all my projects (null/NaN/empty/""/ /)</p>
-    </section>
-    <section id="about" style="display: none;">
-      <h2>About me</h2>
-      <p>I'm an IT guy.</p>
-    </section>
-    <section id="contact" style="display: none;">
-      <h2>Contact me</h2>
-      <p>I am David Badal Beltran</p>
-      <p>If you are interested in contact me, you can contact by email at random@mail.com or by phone at 555-555-5555.</p>
-    </section>
+
   </main>
   <p id="message">This is a sample website.</p>
   <footer>
