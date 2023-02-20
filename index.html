@@ -19,14 +19,16 @@
       document.getElementById("language-link").addEventListener("click", function(event) {
         event.preventDefault();
         if (currentlyDisplayed === "language") {
-          document.getElementById("language").style.display = "block";
+          document.getElementById("language").style.display = "none";
           currentlyDisplayed = null;
         } else {
           document.getElementById("language").style.display = "block";
+          /*
           document.getElementById("overview").style.display = "none";
           document.getElementById("projects").style.display = "none";
           document.getElementById("about").style.display = "none";
           document.getElementById("contact").style.display = "none";
+          */
           currentlyDisplayed = "language";
         }
       });
@@ -130,18 +132,18 @@
     </section>
     <section id="projects" style="display: none;">
       <h2>Projects & functions</h2>
-      <p>Here are goin to be all my projects</p>
+      <p>Here are going to be all my projects</p>
       <p>And all my functions</p>
       <p><strong>(null/NaN/empty/""/ /)</strong></p>
       <a href="projects/index.html">All my projects</a>
     </section>
     <section id="about" style="display: none;">
       <h2>About me</h2>
-      <p>I'm an IT guy.</p>
+      <p>I am David Badal Beltran</p>
+      <p>I'm learning Information technology.</p>
     </section>
     <section id="contact" style="display: none;">
       <h2>Contact me</h2>
-      <p>I am David Badal Beltran</p>
       <p>If you are interested in contact me, you can contact by email at random@mail.com or by phone at 555-555-5555.</p>
     </section>
   </main>
