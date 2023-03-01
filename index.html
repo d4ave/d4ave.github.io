@@ -6,6 +6,8 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <script>
+    /*
+//Safe copy
     document.addEventListener("DOMContentLoaded", function() {
       var currentlyDisplayed = null;
       document.querySelectorAll('.nav-link').forEach(function(link) {
@@ -16,6 +18,77 @@
           link.classList.add('selected');
         });
       });
+//safe copy
+      */
+
+/*
+//////////// It half works
+document.addEventListener("DOMContentLoaded", function() {
+      var currentlyDisplayed = null;
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+          link.classList.add('selected');
+            link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+              link.classList.remove('selected');
+                link.addEventListener('click', function() {
+                  document.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.classList.remove('selected');
+                  });
+                  link.classList.add('selected');
+                });
+            });
+          });
+        });
+      });
+////////// It half works
+*/
+
+
+///////////////It's gonna work right?
+document.addEventListener("DOMContentLoaded", function() {
+      var currentlyDisplayed = null;
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+          link.classList.add('selected');
+            link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+              link.classList.remove('selected');
+                link.addEventListener('click', function() {
+                  document.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.classList.remove('selected');
+                  });
+                  link.classList.add('selected');
+                    link.addEventListener('click', function() {
+                    document.querySelectorAll('.nav-link').forEach(function(link) {
+                      link.classList.remove('selected');
+                        link.addEventListener('click', function() {
+                          document.querySelectorAll('.nav-link').forEach(function(link) {
+                            link.classList.remove('selected');
+                              link.addEventListener('click', function() {
+                                document.querySelectorAll('.nav-link').forEach(function(link) {
+                                  link.classList.remove('selected');
+                                });
+                                //link.classList.add('selected');
+                              });
+                          });
+                        });
+                    });
+                  });
+              });
+            });
+          });
+        });
+      });
+///////////////It's gonna work right?
+
+
       document.getElementById("language-link").addEventListener("click", function(event) {
         event.preventDefault();
         if (currentlyDisplayed === "language") {
